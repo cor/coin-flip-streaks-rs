@@ -8,3 +8,8 @@ edition = "2018"
 
 [dependencies]
 rand = "0.7.3"
+criterion = "0.3.1"
+
+[[bench]]
+name = "coin_flip_streaks"
+harness = false
