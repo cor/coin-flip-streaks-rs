@@ -5,5 +5,9 @@ fn criterion_benchmark(c: &mut Criterion) {
     c.bench_function("coin flip streaks", |b| b.iter(|| experiment()));
 }
 
-criterion_group!(benches, criterion_benchmark);
+criterion_group!{
+    name = benches;
+    config = Criterion::default().sample_size(100);
+    targets = criterion_benchmark,
+}
 criterion_main!(benches);

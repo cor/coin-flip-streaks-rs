@@ -2,6 +2,7 @@ use rand;
 use rand::Rng;
 use rand::prelude::ThreadRng;
 
+#[inline]
 pub fn experiment() {
     const EXPERIMENT_COUNT: usize = 200_000;
 
