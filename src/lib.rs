@@ -24,10 +24,11 @@ fn find_streaks(rng: &mut ThreadRng) -> i32 {
 
     let mut streaks = 0;
 
-    'streak_search: for i in 0..(coin_flips.len() - 6) {
+    'streak_search: for mut i in 0..(coin_flips.len() - 6) {
         for j in (i+1)..(i+6) {
             let coin_type = coin_flips[i];
             if coin_flips[j] != coin_type {
+                i += j;
                 continue 'streak_search
             }
         }
